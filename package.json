@@ -57,7 +57,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "cd contracts && hardhat deploy"
+    "deploy": "cd contracts && hardhat deploy --network metis"
   },
   "eslintConfig": {
     "extends": [
