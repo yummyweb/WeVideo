@@ -1,0 +1,22 @@
+.sidebar-item {
+    padding: 20px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.sidebar-item p {
+    font-size: 25px;
+    text-align: center;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(246, 87, 87, 0.4);
+    border-radius: 30px;
+}
+
+.active-item {
+    color: crimson;
+    font-weight: bold;
+    background-color: rgba(246, 87, 87, 0.4);
+    border-radius: 30px;
+}

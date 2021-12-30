@@ -1,0 +1,52 @@
+.discussion-form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.discussion-row {
+    display: flex;
+    gap: 50px;
+}
+
+.video-title {
+    padding: 20px;
+    border-radius: 25px;
+    width: 300px;
+    border: 3px solid crimson;
+    outline: none;
+    font-size: 20px;
+}
+
+.video-title:active {
+    outline: none;
+}
+
+.upload-file {
+    width: 20%;
+    background: white;
+    border: 3px solid crimson;
+    padding: 17px;
+    border-radius: 20px;
+    margin-top: 20px;
+    color: crimson;
+    font-size: 20px;
+    text-align: center;
+}
+
+.upload-file:hover {
+    background-color: crimson;
+    color: white;
+}
+
+.video-upload {
+    padding: 20px;
+    background-color: crimson;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin-top: 50px;
+    cursor: pointer;
+    width: 20%;
+}
