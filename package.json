@@ -28,7 +28,8 @@
   "scripts": {
     "deploy": "cd contracts && hardhat deploy --network metis",
     "server": "cd server && node index",
-    "client": "cd client && npm start"
+    "client": "cd client && npm start",
+    "build": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
