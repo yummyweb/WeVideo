@@ -44,7 +44,7 @@ export const options = {
 }
 
 const Stats = () => {
-  const { getVideos, videos, nft, readOnlyContract, loading } = useStateContext()
+  const { getVideos, setVideos, videos, nft, readOnlyContract, loading } = useStateContext()
   const { address } = useWeb3Context()
   const [currentSection, setCurrentSection] = useState(3)
   const [data, setData] = useState(null)
@@ -84,13 +84,6 @@ const Stats = () => {
       .then(() => {
         alert("Successfully minted NFT")
       })
-      // nft.methods.mint(account, baseUri + addedMetadata.path).send({ from: account, gas: 1000000 })
-      // .once("error", err => {
-      //   alert(err.message)
-      // })
-      // .then(receipt => {
-      //   alert("Successfully minted NFT")
-      // })
     }
 
     return (
@@ -98,7 +91,7 @@ const Stats = () => {
         <Header />
         <div className="account">
           <SidebarContainer>
-              <SideItem active={currentSection === 0} text="For you" onclick={() => { window.location.replace("/account") }} />
+              <SideItem active={currentSection === 0} text="For you" onclick={() => { window.location.replace("/#/account") }} />
               <SideItem active={currentSection === 1} text="Following" onclick={() => setCurrentSection(1)} />
               <SideItem active={currentSection === 2} text="Create" onclick={() => setCurrentSection(2)} />
               <SideItem active={currentSection === 3} text="Stats" onclick={() => { setCurrentSection(3)}} />
@@ -111,8 +104,8 @@ const Stats = () => {
             <h2 style={{ marginTop: 50 }}>Mint NFT from Video</h2>
             <div className="mint-nft">
               {loading && <p>Loading...</p>}
-              {videos.map(video => (
-                <>
+              {[...new Set(videos)].map(video => (
+                <div key={video.id}>
                   {video.author === address ? <div className="video-nft">
                     <p>{ video.title }</p>
                     <button onClick={() => {
@@ -121,7 +114,7 @@ const Stats = () => {
                       }
                     }} className={`mint-btn ${video.likes < 5 ? "disabled" : null}`}>Mint NFT</button>
                   </div> : null}
-                </>
+                </div>
               ))}
             </div>
           </div>

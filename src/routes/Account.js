@@ -24,7 +24,7 @@ const Account = ({ data }) => {
                     <SideItem active={currentSection === 0} text="For you" onclick={() => { window.location.reload(); setCurrentSection(0)}} />
                     <SideItem active={currentSection === 1} text="Following" onclick={() => setCurrentSection(1)} />
                     <SideItem active={currentSection === 2} text="Create" onclick={() => setCurrentSection(2)} />
-                    <SideItem active={currentSection === 3} text="Stats" onclick={() => window.location.replace("/stats") } />
+                    <SideItem active={currentSection === 3} text="Stats" onclick={() => { window.location.replace("/#/stats") }} />
                     <SideItem active={currentSection === 4} text="Profile" onclick={() => setCurrentSection(4)} />
                 </SidebarContainer>
                 <div style={{ flex: 1 }}>
